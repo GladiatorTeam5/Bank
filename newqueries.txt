@@ -3,7 +3,7 @@ accno varchar(30) references appaccounts(accno),
 custid varchar(30) not null primary key,
 lpwd varchar(30),
 tpwd varchar(30),
-email varchar(30));
+email varchar(30) not null unique);
 
 
 create table appaccounts(
@@ -14,7 +14,7 @@ mname varchar(30),
 lname varchar(30),
 gender varchar(30),
 mob varchar(30),
-email varchar(30),
+email varchar(30) not null unique,
 aadhar varchar(30),
 dob date,
 dob_fname varchar2(30 char), 
