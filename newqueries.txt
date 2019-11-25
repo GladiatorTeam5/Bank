@@ -1,0 +1,42 @@
+create table net_banking(
+accno varchar(30) references appaccounts(accno),
+custid varchar(30) not null primary key,
+lpwd varchar(30),
+tpwd varchar(30),
+email varchar(30));
+
+
+create table appaccounts(
+accno varchar(30) not null primary key,
+reqid varchar(30),
+fname varchar(30),
+mname varchar(30),
+lname varchar(30),
+gender varchar(30),
+mob varchar(30),
+email varchar(30),
+aadhar varchar(30),
+dob date,
+dob_fname varchar2(30 char), 
+address varchar(30),
+o_type varchar(30),
+o_inc varchar(50),
+image varchar2(30 char), 
+opt_netbank varchar(1),
+iagree varchar(1),
+approve varchar(1),
+status varchar(1),
+balance number(30)
+)
+
+create table transactions(
+tid number(30) not null primary key,
+tmode varchar(30),
+baccno varchar(30),
+amt number(30),
+accno varchar(30) references appaccounts(accno),
+dot date,
+mat_inst varchar(30),
+remark varchar(30),
+ttype varchar(1)
+);
